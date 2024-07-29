@@ -59,8 +59,36 @@ function start () {
                     break;
                 case "Add a department":
                     addDepartment();
-                case 
+                    break;
+                case "Add an employee":
+                    addEmployee();
+                    break;
+                case "add a manager":
+                    addManager();
+                    break;
+                case "Delete Departments | Role | Employees":
+                    deleteDepartmentsRolesEmployees();
+                    break;
+                case "View employees by department":
+                    viewemployeesdepartment();
+                    break;
+                case "Update an employee role":
+                    updaterole();
+                    break;
+                case "Exit":
+                    connection.end();
+                    console.log("Goodbye");
+                    break;
             }
-        })
+        });
+}
+
+function viewAllDepartments() {
+    const query ="SELECT * FROM departments";
+    connection.query =(query, (err, res) => {
+        if (err) throw err;
+        console.table(res);
+        start();
+    }); 
 }
 
