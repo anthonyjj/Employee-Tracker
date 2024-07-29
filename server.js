@@ -39,9 +39,9 @@ function start () {
             message: "What would you like to do?",
             choices: [
                 "View all departments",
-                "view all employees",
-                "add a department",
-                "add an employee",
+                "View all employees",
+                "Add a department",
+                "Add an employee",
                 "Add a Manager",
                 "Delete Departments | Role | Employees",
                 "View Employees by Department",
@@ -50,7 +50,17 @@ function start () {
             ],
         })
         .then((answer) => {
-            
+            switch (answer.action) {
+                case "View all departments":
+                    viewAllDepartments();
+                    break;
+                case "View all employees":
+                    viewAllEmployees();
+                    break;
+                case "Add a department":
+                    addDepartment();
+                case 
+            }
         })
 }
 
